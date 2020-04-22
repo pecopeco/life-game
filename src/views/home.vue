@@ -110,7 +110,7 @@ export default {
       }
     },
     setAlive (imgData, pos, color) {
-      // 绘制活细胞图形为白色
+      // 绘制活细胞图形颜色
       imgData.data[pos] = color.r
       imgData.data[pos + 1] = color.g
       imgData.data[pos + 2] = color.b
@@ -198,16 +198,6 @@ export default {
           if (this.isAlive(buf, (y * width + x) * 4)) {
             ++this.lifes
           }
-          // if (cnt === 2 || cnt === 3) {
-          //   // 周围有三个细胞则存活
-          //   this.setAlive(buf, (y * width + x) * 4, this.color)
-          // } else if (cnt < 2 || cnt > 3) {
-          //   // 周围有两个以下或三个以上的细胞则死亡
-          //   this.setDeath(buf, (y * width + x) * 4, this.color)
-          // }
-          // if (this.isAlive(buf, (y * width + x) * 4)) {
-          //   ++this.lifes
-          // }
         }
       }
       // 赋值
