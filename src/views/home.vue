@@ -10,6 +10,7 @@
         van-radio(name="小蝌蚪") 小蝌蚪
         van-radio(name="小泥鳅") 小泥鳅
         van-radio(name="大螃蟹") 大螃蟹
+        van-radio(name="小海星") 小海星
       //- van-button(@click="startGame") 重新开始
       .btn
         van-button(@click="reset") 清空
@@ -20,7 +21,8 @@
       span 2. 活细胞周围如果有2或3个细胞可以继续存活；（正常生存）<br>
       span 3. 死细胞（空格）周围如果恰好有3个细胞则会诞生新的活细胞。（繁殖）<br>
       span 这三条规则简称B3/S23。如果调整规则对应的细胞数量，还能衍生出其他类型的自动机。<br><br>
-      span 游戏操作：选择指定的生物类型，点击屏幕即可生成指定生命种子，观察生命演化状态。<br>
+      span 游戏操作：选择指定的生物类型，点击屏幕即可生成指定生命种子，观察生命演化状态。<br><br>
+      span （后续会增加多种生命体）
 </template>
 
 <script>
@@ -45,7 +47,7 @@ export default {
   methods: {
     setGame () {
       this.width = document.documentElement.clientWidth
-      this.height = document.documentElement.clientHeight - 120
+      this.height = document.documentElement.clientHeight - 140
       this.color = { r: 251, g: 53, b: 80, a: 255 }
       this.canvas = document.getElementById("myCanvas")
       this.ctx = this.canvas.getContext("2d")
@@ -85,6 +87,8 @@ export default {
         this.loach(x, y)
       } else if (this.check === '大螃蟹') {
         this.crab(x, y)
+      } else if (this.check === '小海星') {
+        this.cross(x, y)
       }
       // 赋值
       this.ctx.putImageData(this.imgData, 0, 0)
@@ -298,6 +302,45 @@ export default {
       this.setAlive(this.imgData, ((y + 3) * this.width + (x + 6) ) * 4, this.color)
       this.setAlive(this.imgData, ((y - 3) * this.width + (x + 7) ) * 4, this.color)
       this.setAlive(this.imgData, ((y + 3) * this.width + (x + 7) ) * 4, this.color)
+    },
+    cross (x, y) {
+      // 小海星
+      this.setAlive(this.imgData, ((y) * this.width + (x) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 1) * this.width + (x + 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 2) * this.width + (x + 2) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 3) * this.width + (x + 3) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 4) * this.width + (x + 4) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 5) * this.width + (x + 5) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 6) * this.width + (x + 6) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 7) * this.width + (x + 7) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 8) * this.width + (x + 8) ) * 4, this.color)
+
+      this.setAlive(this.imgData, ((y + 1) * this.width + (x - 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 2) * this.width + (x - 2) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 3) * this.width + (x - 3) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 4) * this.width + (x - 4) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 5) * this.width + (x - 5) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 6) * this.width + (x - 6) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 7) * this.width + (x - 7) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 8) * this.width + (x - 8) ) * 4, this.color)
+
+      this.setAlive(this.imgData, ((y - 1) * this.width + (x + 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 2) * this.width + (x + 2) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 3) * this.width + (x + 3) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 4) * this.width + (x + 4) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 5) * this.width + (x + 5) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 6) * this.width + (x + 6) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 7) * this.width + (x + 7) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 8) * this.width + (x + 8) ) * 4, this.color)
+
+      this.setAlive(this.imgData, ((y - 1) * this.width + (x - 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 2) * this.width + (x - 2) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 3) * this.width + (x - 3) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 4) * this.width + (x - 4) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 5) * this.width + (x - 5) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 6) * this.width + (x - 6) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 7) * this.width + (x - 7) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 8) * this.width + (x - 8) ) * 4, this.color)
     }
   },
   mounted () {
@@ -340,11 +383,15 @@ export default {
     width 100%
     display flex
     .van-radio-group /deep/ {
+      display flex
+      flex-direction column
+      flex-wrap wrap
+      height 1rem
       padding-left .1rem
       .van-radio {
         padding-bottom .05rem
         &:last-child {
-          padding-bottom 0
+          padding-left .1rem
         }
       }
       .van-radio__label {
@@ -355,7 +402,7 @@ export default {
       display flex
       align-items flex-end
       justify-content flex-start
-      padding-left .5rem
+      padding-left .4rem
       .van-button {
         width .6rem
         height .25rem
