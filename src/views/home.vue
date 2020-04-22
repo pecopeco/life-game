@@ -372,6 +372,7 @@ export default {
     width 100%
     display flex
     .van-radio-group /deep/ {
+      position relative
       display flex
       flex-direction column
       flex-wrap wrap
@@ -379,6 +380,7 @@ export default {
       height 1rem
       margin-bottom -.1rem
       padding-left .1rem
+      z-index 9
       .van-radio {
         padding-bottom .1rem
         &:nth-child(4) {
