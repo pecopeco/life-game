@@ -385,11 +385,16 @@ export default {
       display flex
       flex-direction column
       flex-wrap wrap
+      justify-content flex-start
       height 1rem
+      margin-bottom -.1rem
       padding-left .1rem
       .van-radio {
-        padding-bottom .05rem
-        &:last-child {
+        padding-bottom .1rem
+        &:nth-child(4) {
+          padding-left .1rem
+        }
+        &:nth-child(5) {
           padding-left .1rem
         }
       }
