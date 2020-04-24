@@ -488,7 +488,7 @@ export default {
       display flex
       align-items flex-end
       justify-content flex-end
-      padding-right .25rem
+      padding-right .3rem
       font-size .12rem
       color #fff
       text-decoration underline
