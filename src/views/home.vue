@@ -421,7 +421,7 @@ export default {
   background #000
   .text {
     position fixed
-    bottom .3rem
+    bottom .28rem
     right 0
     display flex
     padding-bottom .1rem
@@ -434,8 +434,10 @@ export default {
         justify-content flex-end
       }
       &:last-child {
-        min-width .4rem
-        text-align left
+        display flex
+        align-items center
+        justify-content flex-start
+        min-width .45rem
       }
     }
   }
@@ -488,7 +490,7 @@ export default {
       display flex
       align-items flex-end
       justify-content flex-end
-      padding-right .3rem
+      padding-right .35rem
       font-size .12rem
       color #fff
       text-decoration underline
