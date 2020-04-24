@@ -459,7 +459,7 @@ export default {
       padding-left .1rem
       z-index 9
       .space {
-        height .2rem
+        height .27rem
       }
       .van-radio {
         padding-bottom .1rem
