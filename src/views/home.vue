@@ -421,7 +421,7 @@ export default {
   background #000
   .text {
     position fixed
-    bottom .28rem
+    bottom .3rem
     right 0
     display flex
     padding-bottom .1rem
