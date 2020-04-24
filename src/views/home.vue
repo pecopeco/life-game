@@ -11,6 +11,7 @@
         van-radio(name="小泥鳅") 小泥鳅
         van-radio(name="大螃蟹") 大螃蟹
         van-radio(name="小海星") 小海星
+        .space
         van-radio(name="小龙虾") 小龙虾
         van-radio(name="小乌贼") 小乌贼
       //- van-button(@click="startGame") 重新开始
@@ -420,24 +421,21 @@ export default {
   background #000
   .text {
     position fixed
-    bottom .4rem
+    bottom .3rem
     right 0
-    min-width 1rem
     display flex
     padding-bottom .1rem
     font-size .1rem
     color #fff
     span {
-      flex 1
       &:first-child {
         display flex
         align-items center
         justify-content flex-end
       }
       &:last-child {
-        display flex
-        align-items flex-end
-        justify-content flex-start
+        min-width .4rem
+        text-align left
       }
     }
   }
@@ -447,6 +445,7 @@ export default {
     left 0
     width 100%
     display flex
+    align-items flex-end
     .van-radio-group /deep/ {
       position relative
       display flex
@@ -457,12 +456,12 @@ export default {
       margin-bottom -.1rem
       padding-left .1rem
       z-index 9
+      .space {
+        height .2rem
+      }
       .van-radio {
         padding-bottom .1rem
-        &:nth-child(4) {
-          padding-left .1rem
-        }
-        &:nth-child(5) {
+        &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7),&:nth-child(8) {
           padding-left .1rem
         }
       }
@@ -471,10 +470,13 @@ export default {
       }
     }
     .btn {
+      position relative
       display flex
       align-items flex-end
       justify-content flex-start
+      height fit-content
       padding-left .4rem
+      z-index 10
       .van-button {
         width .6rem
         height .25rem
@@ -486,7 +488,7 @@ export default {
       display flex
       align-items flex-end
       justify-content flex-end
-      padding-right .45rem
+      padding-right .25rem
       font-size .12rem
       color #fff
       text-decoration underline
