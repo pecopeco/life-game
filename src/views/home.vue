@@ -11,6 +11,8 @@
         van-radio(name="小泥鳅") 小泥鳅
         van-radio(name="大螃蟹") 大螃蟹
         van-radio(name="小海星") 小海星
+        van-radio(name="小龙虾") 小龙虾
+        van-radio(name="小乌贼") 小乌贼
       //- van-button(@click="startGame") 重新开始
       .btn
         van-button(@click="reset") 清空
@@ -88,6 +90,10 @@ export default {
         this.crab(x, y)
       } else if (this.check === '小海星') {
         this.cross(x, y)
+      } else if (this.check === '小龙虾') {
+        this.crayfish(x, y)
+      } else if (this.check === '小乌贼') {
+        this.uzi(x, y)
       }
       // 赋值
       this.ctx.putImageData(this.imgData, 0, 0)
@@ -330,6 +336,76 @@ export default {
       this.setAlive(this.imgData, ((y - 6) * this.width + (x - 6) ) * 4, this.color)
       this.setAlive(this.imgData, ((y - 7) * this.width + (x - 7) ) * 4, this.color)
       this.setAlive(this.imgData, ((y - 8) * this.width + (x - 8) ) * 4, this.color)
+    },
+    crayfish (x, y) {
+      // 小龙虾
+      this.setAlive(this.imgData, ((y - 5) * this.width + (x - 7) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 7) * this.width + (x - 6) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 6) * this.width + (x - 6) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 4) * this.width + (x - 6) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 3) * this.width + (x - 6) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 5) * this.width + (x - 5) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 2) * this.width + (x - 5) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y) * this.width + (x - 5) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y) * this.width + (x - 4) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y) * this.width + (x - 3) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y) * this.width + (x - 2) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 2) * this.width + (x - 3) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 3) * this.width + (x - 2) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 2) * this.width + (x - 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 1) * this.width + (x - 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 3) * this.width + (x - 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 2) * this.width + (x) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 1) * this.width + (x) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 2) * this.width + (x + 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 1) * this.width + (x + 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 2) * this.width + (x + 2) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 1) * this.width + (x + 2) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 3) * this.width + (x + 2) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y) * this.width + (x + 3) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 3) * this.width + (x + 3) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y) * this.width + (x + 4) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 2) * this.width + (x + 4) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y) * this.width + (x + 5) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 5) * this.width + (x + 6) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 2) * this.width + (x + 6) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y) * this.width + (x + 6) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 7) * this.width + (x + 7) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 6) * this.width + (x + 7) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 4) * this.width + (x + 7) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 3) * this.width + (x + 7) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 5) * this.width + (x + 8) ) * 4, this.color)
+    },
+    uzi (x, y) {
+      // 小乌贼
+      this.setAlive(this.imgData, ((y - 1) * this.width + (x - 3) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y) * this.width + (x - 3) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 2) * this.width + (x - 3) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 4) * this.width + (x - 2) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 3) * this.width + (x - 2) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 4) * this.width + (x - 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 1) * this.width + (x - 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 3) * this.width + (x - 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 4) * this.width + (x - 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 3) * this.width + (x) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 2) * this.width + (x) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 4) * this.width + (x) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 6) * this.width + (x) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 7) * this.width + (x) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 3) * this.width + (x + 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 2) * this.width + (x + 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 4) * this.width + (x + 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 6) * this.width + (x + 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 7) * this.width + (x + 1) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 4) * this.width + (x + 2) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 1) * this.width + (x + 2) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 3) * this.width + (x + 2) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 4) * this.width + (x + 2) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 4) * this.width + (x + 3) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 3) * this.width + (x + 3) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y - 1) * this.width + (x + 4) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y) * this.width + (x + 4) ) * 4, this.color)
+      this.setAlive(this.imgData, ((y + 2) * this.width + (x + 4) ) * 4, this.color)
     }
   },
   mounted () {
