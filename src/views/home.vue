@@ -50,7 +50,7 @@ export default {
     setGame () {
       this.width = document.documentElement.clientWidth
       this.height = document.documentElement.clientHeight - 140
-      this.color = { r: 251, g: 53, b: 80, a: 255 }
+      this.color = { r: 255, g: 255, b: 255, a: 255 }
       this.canvas = document.getElementById("myCanvas")
       this.ctx = this.canvas.getContext("2d")
       this.imgData = this.ctx.createImageData(this.width, this.height)
